@@ -12,41 +12,41 @@
 #define l_B  6
 #define l_FUNC 7
 
-&mt {
-    tapping-term-ms = <145>;
-    quick_tap_ms = <140>;
-};
+// &mt {
+//     tapping-term-ms = <145>;
+//     quick_tap_ms = <140>;
+// };
 
-&sk {
-    release-after-ms = <2000>;
-    quick-release;
-    lazy;
-};
+// &sk {
+//     release-after-ms = <2000>;
+//     quick-release;
+//     lazy;
+// };
 
-&lt {
-    tapping-term-ms = <140>;
-};
+// &lt {
+//     tapping-term-ms = <140>;
+// };
 
-&caps_word {
-        continue-list = <UNDERSCORE MINUS BACKSPACE DELETE LEFT RIGHT LS(FSLH) FSLH>;
-    };
+// &caps_word {
+//         continue-list = <UNDERSCORE MINUS BACKSPACE DELETE LEFT RIGHT LS(FSLH) FSLH>;
+//     };
 
 
 /{
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <l_L l_R>;
-            then-layer = <l_B>;
-        };
-    };
-
+    // conditional_layers {
+    //     compatible = "zmk,conditional-layers";
+    //     tri_layer {
+    //         if-layers = <l_L l_R>;
+    //         then-layer = <l_B>;
+    //     };
+    // };
+    #include "../globals.dtsi"
     #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
     #include "dactyl_layout.dtsi"
-    #include "dactyl_combos.dtsi"
-    #include "dactyl_macros.dtsi"
-    #include "dactyl_behaviors.dtsi"
+    #include "../combos.dtsi"
+    #include "../macros.dtsi"
+    #include "../behaviors.dtsi"
 
 
     keymap {
